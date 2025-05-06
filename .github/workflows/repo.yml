@@ -1,0 +1,15 @@
+name: Change Repo
+#on: [push, pull_request]
+on:
+  workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "https://github.com/truenas/apps"
+          replace: "https://github.com/crazyp83/apps"
+          regex: false
