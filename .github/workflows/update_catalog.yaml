@@ -1,5 +1,5 @@
 name: catalog_update
-
+permissions: write-all
 concurrency: 
   group: apps_catalog_update
 
