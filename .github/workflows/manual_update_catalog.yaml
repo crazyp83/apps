@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: ghcr.io/truenas/apps_validation:latest
+      image: ghcr.io/crazyp83/apps_validation:latest
 
     steps:
       - uses: actions/checkout@v4
