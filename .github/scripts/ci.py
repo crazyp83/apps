@@ -9,7 +9,7 @@ import yaml
 import sys
 import os
 
-CONTAINER_IMAGE = "ghcr.io/truenas/apps_validation:latest"
+CONTAINER_IMAGE = "ghcr.io/crazyp83/apps_validation:latest"
 PLATFORM = "linux/amd64"
 
 
