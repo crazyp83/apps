@@ -120,7 +120,7 @@ def get_base_cmd():
 def pull_app_catalog_container():
     print_stderr(f"Pulling container image [{CONTAINER_IMAGE}]")
     res = subprocess.run(
-        f"docker pull --platform {PLATFORM} --quiet {CONTAINER_IMAGE}",
+        f"docker pull --platform {PLATFORM} {CONTAINER_IMAGE}",
         shell=True,
         capture_output=True,
     )
@@ -134,7 +134,7 @@ def fix_permissions(file_path):
     print_stderr("Fixing permissions")
     cmd = " ".join(
         [
-            f"docker run --platform {PLATFORM} --quiet --rm -v {os.getcwd()}:/workspace",
+            f"docker run --platform {PLATFORM} --rm -v {os.getcwd()}:/workspace",
             f"--entrypoint /bin/bash {CONTAINER_IMAGE} -c 'chmod 777 /workspace/{file_path}'",
         ]
     )
@@ -152,7 +152,7 @@ def render_compose():
     app_dir = f"ix-dev/{args['train']}/{args['app']}"
     cmd = " ".join(
         [
-            f"docker run --platform {PLATFORM} --quiet --rm -v {os.getcwd()}:/workspace {CONTAINER_IMAGE}",
+            f"docker run --platform {PLATFORM} --rm -v {os.getcwd()}:/workspace {CONTAINER_IMAGE}",
             "apps_render_app render",
             f"--path /workspace/{app_dir}",
             f"--values /workspace/{app_dir}/{test_values_dir}/{args['test_file']}",
@@ -374,7 +374,7 @@ def print_inspect_data(container):
 
 
 def run_app():
-    cmd = f"{get_base_cmd()} up --detach --quiet-pull --wait --wait-timeout 600"
+    cmd = f"{get_base_cmd()} up --detach --pull --wait --wait-timeout 600"
     print_cmd(cmd)
     res = subprocess.run(cmd, shell=True, capture_output=True)
 
@@ -437,7 +437,7 @@ def check_app_dir_exists():
 def copy_lib():
     cmd = " ".join(
         [
-            f"docker run --platform {PLATFORM} --quiet --rm -v {os.getcwd()}:/workspace {CONTAINER_IMAGE}",
+            f"docker run --platform {PLATFORM} --rm -v {os.getcwd()}:/workspace {CONTAINER_IMAGE}",
             "apps_catalog_hash_generate --path /workspace",
         ]
     )
