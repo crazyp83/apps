@@ -7,7 +7,7 @@ This repository contains the Docker-Compose based App catalog used by TrueNAS sy
 
 ## Contributing Applications
 
-The Apps catalog is open for contributions! We provide instructions on how to locally develop and test new applications in our [contributors guide](CONTRIBUTIONS.md).  
+The Apps catalog is open for contributions! We provide instructions on how to locally develop and test new applications in our [contributors guide](CONTRIBUTIONS.md).   
 
 Questions on the development of applications? Please head over to our [discussions](https://github.com/truenas/apps/discussions) page to ask questions and collaborate with other App Developers. 
 
