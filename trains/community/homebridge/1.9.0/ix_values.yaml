@@ -1,0 +1,10 @@
+images:
+  image:
+    repository: homebridge/homebridge
+    tag: "latest"
+consts:
+  home_assistant_container_name: homebridge
+  perms_container_name: permissions
+  init_container_name: init
+  internal_web_port: 8581
+  config_path: /homebridge

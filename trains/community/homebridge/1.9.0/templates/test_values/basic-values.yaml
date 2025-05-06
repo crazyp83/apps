@@ -1,0 +1,30 @@
+resources:
+  limits:
+    cpus: 2.0
+    memory: 4096
+
+TZ: America/New_York
+
+homebridge:
+  devices: []
+  additional_envs: []
+
+network:
+  web_port: 8581
+  additional_ports: []
+  dns_opts: []
+
+run_as:
+  user: 568
+  group: 568
+
+ix_volumes:
+  config: /opt/tests/mnt/homebridge
+
+storage: 
+  config:
+    type: ix_volume
+    ix_volume_config:
+      dataset_name: config
+      create_host_path: true
+  additional_storage: []
