@@ -1,5 +1,5 @@
 name: manual_catalog_update
-
+permissions: write-all
 concurrency: 
   group: manual_apps_catalog_update
 
@@ -31,15 +31,15 @@ jobs:
         if: env.CHANGES != '0'
         with:
             commit_message: "Publish new changes in catalog [skip ci]"
-            commit_user_name: sonicaj
-            commit_user_email: waqarsonic1@gmail.com
-            commit_author: sonicaj <waqarsonic1@gmail.com>
+            commit_user_name: crazyp
+            commit_user_email: crazyp@icloud.com
+            commit_author: crazyp <crazyp@icloud.com>
       - name: Update catalog
         run: |
           /bin/bash -c "PWD=${pwd}; /usr/local/bin/apps_catalog_update update --path $PWD"
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
             commit_message: "Update catalog changes [skip ci]"
-            commit_user_name: sonicaj
-            commit_user_email: waqarsonic1@gmail.com
-            commit_author: sonicaj <waqarsonic1@gmail.com>
+            commit_user_name: crazyp
+            commit_user_email: crazyp@icloud.com
+            commit_author: crazyp <crazyp@icloud.com>
